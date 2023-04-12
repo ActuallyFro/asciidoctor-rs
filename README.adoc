@@ -1,0 +1,32 @@
+= This Cargo Lib Thing?
+
+I reallly just want to have an AsciiDoc creator that pushes out PDF ... without Ruby... :')
+Hacking with these examples was caused by ChatGPT and CoPilot.
+
+== AsciiDoc-rs-PDF
+
+I decided to show an Minimal Viable Product (MVP) of a PDF generator.
+This source is in main.rs.
+
+=== Test Preparation
+. Setup folders: `mkdir -p target/debug/output`
+. Prep input file: `cp tests/input/block_page_break.adoc target/debug/example.adoc`
+. Prep comparison file: `cp tests/output/block_page_break.html target/debug/output/example.html`
+. Install `wkhtmltopdf` (e.g., `sudo pacman -S wkhtmltopdf`)
+. Build the app: `cargo build`
+
+=== New Tests
+. MVP: asciidoc-rs-pdf
+.. Change to folder: `cd target/debug`
+.. Run the app: `./asciidoc-rs-pdf`
+. Direct asciidoctor with wkhtmltopdf
+.. Use the ruby-based version: `asciidoctor README.adoc` 
+.. Convert to PDF: `wkhtmltopdf README.html README.pdf```
+
+
+== Rust Tests
+This repo appears to be an incomplete implementation of the AsciiDoc-rs project.
+However, the conversions and tests are great!
+
+To check original implementation of .rs files, run:
+`cargo test`

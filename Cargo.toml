@@ -1,9 +1,19 @@
 [package]
 authors = ["Antoni Boucher <antoni.boucher@adgear.com>"]
 name = "asciidoctor"
-version = "0.1.0"
+version = "0.2.0"
+
+
+#https://crates.io/crates/wkhtmltopdf/0.4.0
 
 [dependencies]
+html-diff = "^0.0.6"
+wkhtmltopdf = "0.4.0"
 
 [dev-dependencies]
-html-diff = "^0.0.4"
+html-diff = "^0.0.6"
+wkhtmltopdf = "0.4.0"
+
+[[bin]]
+name = "asciidoc-rs-pdf"
+path = "src/main.rs"
